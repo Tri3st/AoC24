@@ -11,5 +11,12 @@ Pair up numbers. Order the lists and calculate the differences
 
 Check lines of reports. Numbers must be in a certain order.
 
-- part 1: python, ... 
-- part 2: python, ...
+- part 1: python, ☑️ 
+- part 2: python, ☑️
+
+## Day 3: Mull It Over
+
+Get computer instructions out of the jumbled code.
+
+- part 1: python ...
+- part 2: python ....
