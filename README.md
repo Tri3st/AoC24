@@ -18,5 +18,12 @@ Check lines of reports. Numbers must be in a certain order.
 
 Get computer instructions out of the jumbled code.
 
-- part 1: python ...
-- part 2: python ....
+- part 1: python ☑️
+- part 2: python ☑️
+
+## Day 4: Ceres Search
+
+Search words in a matrix puzzle
+
+- part1: python ...
+- part2: python ...
