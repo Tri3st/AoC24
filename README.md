@@ -25,5 +25,13 @@ Get computer instructions out of the jumbled code.
 
 Search words in a matrix puzzle
 
-- part1: python ...
-- part2: python ...
+- part1: python ☑️ 
+- part2: python ☑️ 
+
+## Day 5: Print Queue
+
+Use ordering list to check page order
+
+- part 1: python ...
+- part 2: python ...
+
