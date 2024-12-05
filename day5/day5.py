@@ -33,10 +33,13 @@ test_data = """47|53
 97,13,75,29,47"""
 
 def part1():
-    order = Order(test_data)
+    order = Order(big_data)
     print(order)
     print(order.ordering)
+    print(order.pages_lists)
+    print(order.sum)
 
 
 def part2():
-    pass
+    order = Order(test_data)
+    print(order)

@@ -1,23 +1,33 @@
 class Order:
-    """
-    'page' always come before page Y, Z and A
-    ordering is {
-                    page: X,
-                    page2: [Y, Z, A]
-    """
-    def __init__(self,data):
-        self.ordering = {}
-        self.pages_lists = []
-        self.calc(data)
+    def __init__(self, data):
+        data2 = data.split('\n\n')
+        data3 = data2[0].split("\n")
+        data4 = data2[1].split("\n")
+        self.ordering = [d.split("|") for d in data3]
+        self.pages_lists = [n.split(",") for n in data4]
+        self.sum = 0
+        for lst in self.pages_lists:
+            print("Checking line ", lst)
+            check = self.check_line(lst)
+            if check:
+                self.sum += int(lst[(len(lst) // 2)])
+            print(check)
 
-    def calc(self, data):
-        datas = data.split('\n\n')
-        for datas2 in datas[0].split("\n"):
-            print(datas2)
-            page1, page2 = datas2.split('|')
-            if int(page1) in self.ordering.keys():
-                self.ordering[int(page1)].append(int(page2))
-            else:
-                self.ordering[int(page1)] = [int(page2)]
-        for line in datas[1].split('\n'):
-            self.pages_lists.append(int(line))
+    def check_line(self, line):
+        for i, x in enumerate(line):
+            print("Checking line ", line)
+            # check if x is in rules
+            for rule in self.ordering:
+                print("rule : ", rule)
+                if rule[0] in line and rule[1] in line:
+                    idx_1 = line.index(rule[0])
+                    idx_2 = line.index(rule[1])
+                    if idx_1 < idx_2:
+                        continue
+                    else:
+                        return False
+        return True
+
+
+
+
