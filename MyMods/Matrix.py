@@ -6,6 +6,7 @@ use dimj -> dimensions rows
 class Matrix:
     """
        Matrix class. makes a matrix with dimi colums and dimj rows
+       Has an add_lines method, with which we can add data to the matrix.
     """
     def __init__(self, dimj, dimi, base=0):
         self.dimj = dimj
