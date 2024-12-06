@@ -27,7 +27,3 @@ class Order:
                     else:
                         return False
         return True
-
-
-
-
