@@ -38,8 +38,11 @@ def part1():
     print(order.ordering)
     print(order.pages_lists)
     print(order.sum)
+    print(order.wrong_pages)
 
 
 def part2():
     order = Order(test_data)
-    print(order)
+    print("Order : ", order)
+    print("Ordering : ", order.ordering)
+    print("Wronge pages : ", order.wrong_pages)
