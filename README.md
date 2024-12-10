@@ -32,6 +32,30 @@ Search words in a matrix puzzle
 
 Use ordering list to check page order
 
+- part 1: python ☑️
+- part 2: python ...
+
+## Day 6: Guard Gallivant
+
+- part 1: python ☑️
+- part 2: python ...
+
+## Day 7: Bridge Repair
+
+- part 1: python ☑️
+- part 2: python ☑️
+
+# Day 8: Resonant Collinearity
+
 - part 1: python ...
 - part 2: python ...
 
+## Day 9: Disk Fragmenter
+
+- part 1: python ...
+- part 2: python ...
+
+## Day 10: Hoof It
+
+- part 1: python ...
+- part 2: python ...
