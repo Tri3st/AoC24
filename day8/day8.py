@@ -1,4 +1,5 @@
 from MyMods.ReadDataFile import read_data
+from day8.frequency_map import FrequencyMap
 
 big_data = read_data("./day8/input_day8.txt")
 
@@ -17,7 +18,9 @@ test_data = """............
 
 
 def part1():
-    pass
+    f_map = FrequencyMap(test_data)
+    print(f_map)
+    print(f_map.antennas)
 
 def part2():
     pass
