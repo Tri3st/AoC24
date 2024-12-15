@@ -21,6 +21,7 @@ def part1():
     f_map = FrequencyMap(test_data)
     print(f_map)
     print(f_map.antennas)
+    print(f_map.antinodes)
 
 def part2():
     pass
