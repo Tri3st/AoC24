@@ -15,6 +15,17 @@ MIIIIIJJEE
 MIIISIJEEE
 MMMISSJEEE""".split("\n")
 
+test2 = """OOOOO
+OXOXO
+OOOOO
+OXOXO
+OOOOO""".split("\n")
+
+test3 = """AAAA
+BBCD
+BBCC
+EEEC""".split("\n")
+
 
 def part1():
     garden = Garden(test_data)
