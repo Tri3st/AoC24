@@ -1,4 +1,4 @@
-from day8.day8 import *
+from day13.day13 import *
 
 
-part1()
+part2()
