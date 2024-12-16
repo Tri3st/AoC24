@@ -18,10 +18,12 @@ test_data = """............
 
 
 def part1():
-    f_map = FrequencyMap(test_data)
-    print(f_map)
+    f_map = FrequencyMap(big_data)
     print(f_map.antennas)
     print(f_map.antinodes)
+    print(f_map.grids['A'])
+    print(f_map.grids['0'])
+    print(len(f_map.total_antinodes))
 
 def part2():
     pass
