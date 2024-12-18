@@ -10,7 +10,7 @@ def read_char():
         while char := file.read(1):
             yield char
 
-t = 2
+t = 1
 
 def part1():
     d = Diskmap()
@@ -22,10 +22,10 @@ def part1():
             d.new_num((int(c)))
     print(d)
     print(d.count_empty)
-    print([x for d.diskmap])
-    #d.calc()
-    #print(d)
-    #print(d.calc_sum())
+    d.calc()
+    print(d)
+
+
 
 
 def part2():

@@ -19,17 +19,23 @@ class Diskmap:
         self.count_empty = len([d for d  in self.diskmap if d == '.'])
 
     def calc(self):
+        self.count_empty = len([x for x in self.diskmap if x == "."])
         self.fill_empty()
 
-
     def fill_empty(self):
-        self.count_empty = len([x for x in self.diskmap if x == "."])
-        for j in range(self.count_empty):
+        while not self.is_finished():
             # find first index of empty
             e = self._find_first_empty()
             # find last index of filled
             l = self._find_last_filled()
             self._swap(e, l)
+            print(self.diskmap)
+
+    def fill_empty2(self):
+        pass
+
+    def find_block_last_block(self):
+        pass
 
     def _find_first_empty(self):
         idx = -1
@@ -51,9 +57,12 @@ class Diskmap:
     def calc_sum(self):
         return sum([i * d for i,d in enumerate(self.diskmap) if d != '.'])
 
+    def is_finished(self):
+        return self.diskmap[len(self.diskmap) - self.count_empty:] == [x for x in self.diskmap if x == '.']
+
 
     def __str__(self):
         """
         Returns a string representation of the diskmap.
         """
-        return f"{self.diskmap} - empty {self.count_empty}"
+        return f"{self.diskmap} - empty {self.count_empty} - total {self.calc_sum()}"

@@ -59,3 +59,9 @@ Use ordering list to check page order
 
 - part 1: python ...
 - part 2: python ...
+
+## Day 11: Plutonian Pebbles
+
+- part 1: python ☑️
+- part 2: python ...
+
