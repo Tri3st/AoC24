@@ -18,7 +18,7 @@ p=9,5 v=-3,-3""".split("\n")
 
 
 def part1():
-    robot_map = RobotMap(test_data, 1)
+    robot_map = RobotMap(test_data, 100)
     print(robot_map.__repr__())
 
 

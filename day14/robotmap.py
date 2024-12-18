@@ -11,11 +11,14 @@ class RobotMap(Matrix):
             self.robots.append(Robot(line))
         for robot in self.robots:
             self.adjust_map(robot)
-        for _ in range(cycles):
+        print(self.__repr__())
+        self.do_cycle(cycles)
+
+    def do_cycle(self, nr_of_cycles=1):
+        for _ in range(nr_of_cycles):
             for robot in self.robots:
-                old_coords = robot.point
-                new_coords = robot.move(self.dimj, self.dimi)
-                self.adjust_map(old_coords, new_coords)
+                robot.move(self.dimj, self.dimi)
+                self.adjust_map(robot)
 
     def adjust_map(self, robot):
         print("old_coords", robot.old_point)
@@ -29,6 +32,18 @@ class RobotMap(Matrix):
 
     def remove_old_robot(self, old_point):
         self.grid[old_point[0]][old_point[1]] = '.' if self.grid[old_point[0]][old_point[1]] == 1 else self.grid[old_point[0]][old_point[1]] - 1
+
+    def get_quadrant_scores(self):
+        jline = self.dimj // 2
+        iline = self.dimi // 2
+
+    def get_quadrant_score(self, jmin, jmax, imin, imax):
+        score = 0
+        for a in range(jmin, jmax + 1):
+            for b in range(imin, imax + 1):
+                if self.grid[a][b] != '#':
+                    score += self.grid[a][b]
+
 
     def __str__(self):
         res = ""
