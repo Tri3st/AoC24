@@ -1,6 +1,6 @@
 from MyMods.ReadDataFile import read_data
 
-from AoC.AoC24.day17.opcode import Opcode
+from day17.opcode import Opcode
 
 big_data = read_data('./day17/input_day17.txt', mode=0)
 
@@ -10,10 +10,24 @@ Register C: 0
 
 Program: 0,1,5,4,3,0"""
 
+test2 = """Register A: 10
+Register B: 0
+Register C: 0
+
+Program: 5,0,5,1,5,4"""
+
+
+test3 = """Register A: 2024
+Register B: 0
+Register C: 0
+
+Program: 0,1,5,4,3,0"""
 
 def part1():
-    op = Opcode(test_data)
-    print(op)
+    op = Opcode(test3)
+    op.do_calc()
+    op.do_calc()
+    op.do_calc()
 
 
 def part2():
