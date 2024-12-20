@@ -12,7 +12,6 @@ class Robot:
     def move(self, dimj, dimi):
         self.old_point = self.point
         self.point = (self.old_point[0] + self.velocity[0]) % dimj, (self.old_point[1] + self.velocity[1]) % dimi
-        print(self.point)
         return self.point
 
     def __str__(self):
