@@ -1,8 +1,17 @@
 def xor(num1, num2):
+    print("xor", num1, num2)
     num1_ = bin(num1)[2:]
     num2_ = bin(num2)[2:]
-    xor = [ int(x) ^ int(y) for x, y in zip(num1_, num2_)]
-    return int("".join([str(c) for c in xor]), 2)
+    if len(num1_) != len(num2_):
+        # pad zeros in front of shorter number
+        if len(num1_) < len(num2_):
+            for _ in range(len(num2_) - len(num1_)):
+                num1_ = '0' + num1_
+        else:
+            for _ in range(len(num1_) - len(num2_)):
+                num2_ = '0' + num2_
+    xor_tmp = [ int(x) ^ int(y) for x, y in zip(num1_, num2_)]
+    return int("".join([str(c) for c in xor_tmp]), 2)
 
 
 class Opcode:
@@ -16,27 +25,31 @@ class Opcode:
         self.pointer = 0
         self.output = []
         print(self.__str__())
+        while self.pointer < len(self.program):
+            self.do_calc()
 
     def do_calc(self):
         opcode = self.program[self.pointer]
         op = self.program[self.pointer + 1]
+        lit = op
+        operand = None
         print(f"step {self.pointer + 1} : opcode {opcode}, operand {op}")
         if 0<= op < 4:
             operand = op
         elif op == 4:
-            operand = self.regA.copy()
+            operand = int(str(self.regA)[:])
         elif op == 5:
-            operand = self.regB.copy()
+            operand = int(str(self.regB)[:])
         elif op == 6:
-            operand = self.regC.copy()
+            operand = int(str(self.regC)[:])
         if opcode == 0:
             self.adv(operand)
         elif opcode == 1:
-            self.bxl(operand)
+            self.bxl(lit)
         elif opcode == 2:
             self.bst(operand)
         elif opcode == 3:
-            self.jnz(operand)
+            self.jnz(lit)
         elif opcode == 4:
             self.bxc(operand)
         elif opcode == 5:
@@ -71,7 +84,10 @@ class Opcode:
         self.pointer += 2
 
     def out(self, operand):
-        self.output.extend([int(x) for x in list(str(operand % 8))])
+        print("operand : ", operand)
+        tmp = [int(x) for x in list(str(operand % 8))]
+        print("temp : ", tmp)
+        self.output.extend(tmp)
         self.pointer += 2
 
     def bdv(self, operand):

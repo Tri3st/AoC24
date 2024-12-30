@@ -1,4 +1,4 @@
 from day17.day17 import *
 
 
-part1()
+part2()
